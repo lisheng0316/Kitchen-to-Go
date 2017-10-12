@@ -20,6 +20,7 @@ li img {
 
 li p {
     font: 200 12px/1.5 Georgia, Times New Roman, serif;
+    po
 }
 
 li {
@@ -44,4 +45,26 @@ img {
     float: left;
     margin: 3px;
     padding: 3px;
+}
+nav ul {
+    height:auto; width: auto;
+    /*overflow:hidden; overflow-y:scroll;*/
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+}
+.foodtype {
+
 }
