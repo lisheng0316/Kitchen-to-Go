@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/main.css">
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 </head>
 <body>
+    
+<div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd-peSkPIlELft4XVLxvrvRhH7ZnkY7Ns&callback=initMap">
+    </script>
 
     <div>
         <ul>
@@ -28,11 +52,13 @@
             </li>
 
             <li>
-                <img class= "foodThumbnails"src="https://i.imgur.com/NsboXmI.jpg" />
+                <img class= "foodThumbnails" src="https://i.imgur.com/NsboXmI.jpg" />
                 <h3>Seafood Pancake</h3>
                 <p>Lorem ipsum dolor sit amet...</p>
             </li>
         </ul>
     </div>
+    
 </body>
 </html>
+
