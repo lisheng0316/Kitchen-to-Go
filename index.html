@@ -4,35 +4,143 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/main.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd-peSkPIlELft4XVLxvrvRhH7ZnkY7Ns&callback=initMap">
+    </script>
 
-    <div>
-        <ul>
-            <li>
-                <img class= "foodThumbnails" src="https://i.imgur.com/Aog0cS4.jpg" />
-                <h3>Cuban Sandwich</h3>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </li>
+    <nav>
+        <div>
+            <ul>
 
-            <li>
-                <img class= "foodThumbnails" src="https://i.imgur.com/jBg7plE.jpg" />
-                <h3>Fired Dumplings</h3>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </li>
+                <li>
+                    <img class= "foodThumbnails"src="https://i.imgur.com/NsboXmI.jpg" />
+                    <h3>Seafood Pancake</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Korean</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+                <li>
+                    <img class= "foodThumbnails" src="https://i.imgur.com/Aog0cS4.jpg" />
+                    <h3>Cuban Sandwich</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Latin</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
 
-            <li>
-                <img class= "foodThumbnails" src="https://i.imgur.com/VhTpBf7.jpg" />
-                <h3>Lamb Cold Noodles</h3>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </li>
+                <li>
+                    <img class= "foodThumbnails" src="https://i.imgur.com/jBg7plE.jpg" />
+                    <h3>Fired Dumplings</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Chinese</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
 
-            <li>
-                <img class= "foodThumbnails"src="https://i.imgur.com/NsboXmI.jpg" />
-                <h3>Seafood Pancake</h3>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </li>
-        </ul>
-    </div>
+                <li>
+                    <img class= "foodThumbnails" src="https://i.imgur.com/VhTpBf7.jpg" />
+                    <h3>Lamb Cold Noodles</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Chinese</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+
+                <li>
+                    <img class= "foodThumbnails"src="https://i.imgur.com/NsboXmI.jpg" />
+                    <h3>Seafood Pancake</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Korean</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+                <li>
+                    <img class= "foodThumbnails" src="https://i.imgur.com/Aog0cS4.jpg" />
+                    <h3>Cuban Sandwich</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Cuban</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+
+                <li>
+                    <img class= "foodThumbnails" src="https://i.imgur.com/jBg7plE.jpg" />
+                    <h3>Fired Dumplings</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Japanese</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+
+                <li>
+                    <img class= "foodThumbnails" src="https://i.imgur.com/VhTpBf7.jpg" />
+                    <h3>Lamb Cold Noodles</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Middle East</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+
+                <li>
+                    <img class= "foodThumbnails"src="https://i.imgur.com/NsboXmI.jpg" />
+                    <h3>Seafood Pancake</h3>
+                    <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    </div>
+                    <div class = "foodtype">
+                        <h5>Korean</h5>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </body>
 </html>
