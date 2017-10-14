@@ -7,7 +7,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var helmet = require('helmet');
-var fs = require('fs');
 
 // var config = require('./config/config.js');
 var routes = require('./request-handlers/routes.js');
