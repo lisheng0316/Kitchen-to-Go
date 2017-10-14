@@ -96,19 +96,19 @@ var user_schema = {
         },
         'email': {
             'type': 'string',
-            'format': 'email'
+            'format': 'email',
             'invalidMessage': 'Invalid email',
             'requiredMessage': 'Email is required'
         },
         'password': {
             'type': 'string',
-            'format': 'password'
+            'format': 'password',
             'invalidMessage': 'Invalid Password: Must be between 8 and 15 characters and contain at least one number, one upper case letter, one lower case letter and one special character: -+_!@#$%^&*,',
             'requiredMessage': 'Phone is required'
         },
         'phone': {
             'type': 'string',
-            'format': 'email'
+            'format': 'email',
             'invalidMessage': 'Invalid email',
             'requiredMessage': 'Phone is required'
         }
@@ -187,7 +187,6 @@ exports.id = function(req, res, next) {
         } catch(e) {
             res.status(500).send('Error validating id');
         }
-    }
 }
 
 /**

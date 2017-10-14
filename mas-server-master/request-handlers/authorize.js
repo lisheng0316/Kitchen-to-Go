@@ -23,7 +23,7 @@ module.exports = function(db) {
 							pgClient.query(query, value, function(error, result2) {
 								try {
 									if(!error) {
-										res.status(403).('Method not allowed. Session required');
+										res.status(403).send('Method not allowed. Session required');
 									}
 									else {
 										res.status(503).send('Service Disable');
@@ -59,7 +59,7 @@ module.exports = function(db) {
 						}
 					}
 					else {
-						res.status(403).('Method not allowed. Session required');
+						res.status(403).send('Method not allowed. Session required');
 					}
 				}
 				else {
