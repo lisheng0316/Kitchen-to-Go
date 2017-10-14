@@ -30,6 +30,9 @@ var CURR_DIR = __dirname;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({strict: false}));
 app.use(helmet());
+var CURR_DIR = __dirname;
+app.set('views', path.join(CURR_DIR, 'public'));
+app.set('view engine', 'ejs');
 
 app.set('views', path.join(CURR_DIR, 'public'));
 app.set('view engine', 'ejs');
@@ -61,9 +64,8 @@ createServer(port);
  * Creates the server.
  */
 function createServer(config_port) {
-	
-  var port = config_port;
-  app.listen(port);
- 
-	console.log("Server running on %s mode. Listening on port %d", app.settings.env, port);
+
+    var port = config_port;
+    app.listen(port);
+    console.log("Server running on %s mode. Listening on port %d", app.settings.env, port);
 }

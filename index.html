@@ -5,18 +5,23 @@
     <title>Title</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <style>
-        #map {
-            height: 40vh !important;
-            width: 100vw !important;
-        }
-    </style>
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="mas-server-master/public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="mas-server-master/public/css/main.css">
+
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="mas-server-master/public/js/script.js"></script>
 </head>
 <body>
-    <div id="map"></div>
+
+    <div class = "container-fluid">
+        <input type="search" id="mySearch" class = "col-md-12" placeholder="Search for food...">
+    </div>
+
+    <div class="container-fluid">
+        <h1>Responsive Map</h1>
+        <div id="map_container"></div>
+        <div id="map"></div>
+    </div>
 
     <nav>
         <div>
@@ -35,10 +40,9 @@
                     <div class = "foodtype col-md-4">
                         <h5>Korean</h5>
                     </div>
-                    
                 </li>
-                
-                
+
+
                 <li>
                     <div class="col-md-6">
                         <img class= "foodThumbnails" src="https://i.imgur.com/Aog0cS4.jpg" />
