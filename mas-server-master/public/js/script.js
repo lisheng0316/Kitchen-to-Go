@@ -41,32 +41,16 @@ var map, infoWindow;
     }
 
 
-$.getJSON('/simplepie/round/alltables.json', function (data) {
-    var o = null;
-    var myArray = new Array();
-    document.open();
-    for( var i = 0; i < data.length; i++ )
-    {
-        o = data[i];
-        myArray.push('<li>' + o.title + '</li>');
-        //document.write(o.source + " <br>" + o.description + "<br>") ;
-        myArray.push(o.source);
-        makeUL(o.source);
-    }
-
-//document.close();
-// document.write('Latitude: ' + data.id + '\nLongitude: ' + data.title + '\nCountry: ' + data.description);
-
-    function makeUL(array) {
-        var list = document.createElement('ul');
-        for(var i = 0; i < array.length; i++) {
-            var item = document.createElement('li');
-            item.appendChild(document.createTextNode(array[i]));
-            list.appendChild(item);
-        }
+// $.getJSON('mas-server-master/request-handlers/untitled.json', function(data) {
+//
+//     var ul = document.getElementById("ct");
+//     for(var i = 0; i < data.length; i++) {
+//         o = data[i]
+//         var li = document.createElement('li');
+//         li.appendChild(document.createTextNode(o));
+//         ul.appendChild(li);
+//     }
+// });
 
 
-        return list;
-    }
 
-});
