@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        #map {
+            height: 40vh !important;
+            width: 100vw !important;
+        }
+    </style>
+    <script src="js/script.js"></script>
+</head>
+<body>
+	<p align='right'>Signed in as <%= user.name %></p>
+    <div id="map"></div>
+
+    <nav>
+        <div>
+            <ul>
+				<% foods.forEach(function(food) { %>
+					<li>
+                    <div class="col-md-6">
+                        <img class= "foodThumbnails"src="<%= food.image %>" />
+                        <h3><a href=""><%= food.name %></a></h3>
+                        <div>
+                            <p>Lorem ipsum dolor sit amet...</p>
+                        </div>
+                    </div>
+                    <div class="rating col-md-2">
+                        <% for (var i = 0; i < food.rating; i++) { %>
+							<span>☆</span>
+						<% }; %>
+                    </div>
+                    <div class = "foodtype col-md-4">
+                        <h5><%= food.type %></h5>
+                    </div>
+                </li>
+				<% }); %>
+            </ul>
+        </div>
+    </nav>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd-peSkPIlELft4XVLxvrvRhH7ZnkY7Ns&callback=initMap"></script>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var helmet = require('helmet');
+var fs = require('fs');
 
 // var config = require('./config/config.js');
 var routes = require('./request-handlers/routes.js');
@@ -15,6 +16,7 @@ var routes = require('./request-handlers/routes.js');
 // var noSQLDatabase = require('./database/mongoManager.js');
 
 var app = express();
+var CURR_DIR = __dirname;
 
 // Connection URLs for Databases.
 // var SQLconnection = config.SQLConnection;
@@ -30,6 +32,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({strict: false}));
 app.use(helmet());
 
+app.set('views', path.join(CURR_DIR, 'public'));
+app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(CURR_DIR, 'public')));
+
 // Make sure all request return CORS headers
 app.use(function (req, res, next) {
     var origin = req.get('origin');
@@ -39,14 +46,13 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, token, newpassword');
-
+	
     next();
 });
 
 // Node App Port
 // var port = config.port || 3000;
 var port = 3000;
-
 
 routes(app, "handlers", "db", "noSQLdb");
 

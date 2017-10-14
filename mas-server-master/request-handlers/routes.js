@@ -3,8 +3,10 @@
  * @author: Joel R. Corporan
  */
 module.exports = function Route(app, handlers, db, noSQLDB) {
-
-
+	
+	var user = {"name": "Randy Random",
+				"age": 24
+				};
 	var foods = [{
 					"id": "f84b93aa-a37c-49a0-9c8a-732bc0cb02b1",
 					"type": "asian",
@@ -33,10 +35,13 @@ module.exports = function Route(app, handlers, db, noSQLDB) {
 					"rating": 2.0,
 					"image" : "https://i.imgur.com/yDD0LCR.jpg"
 				}];
-
+	
 	// This route handler user's session.
 	app.get('/foods', function(req, res) {
-		res.send(foods);
+		var data = {
+			user: user,
+			foods: foods};
+		res.render('index', data);
 	});
 
 	// This route handler user's session.
