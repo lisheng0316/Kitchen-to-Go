@@ -20,7 +20,10 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "helmet": "^3.8.2",
-    "validator": "*",
-    "validate": "*"
+    "hogan-express": "^0.5.2",
+    "jsen": "^0.6.6",
+    "validate": "^3.0.1",
+    "validate-js": "^2.0.1",
+    "validator": "^9.0.0"
   }
 }
