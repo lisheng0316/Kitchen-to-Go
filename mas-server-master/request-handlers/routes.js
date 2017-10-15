@@ -2,15 +2,11 @@
  * This module received all requests and give them to its respective handler.
  * @author: Joel R. Corporan
  */
-var fs = require('fs');
-var Guid = require('guid');
-var templates = require('js/templates.js')
-
-console.log("test");
+const fs = require('fs');
 
 module.exports = function Route(app, handlers, db, noSQLDB) {
 	
-	var user = {"name": "Randy Random",
+	const user = {"name": "Randy Random",
 				"age": 24
 				};
 /* 	var foods = [{
@@ -44,7 +40,18 @@ module.exports = function Route(app, handlers, db, noSQLDB) {
 	
 	// Routes to index.ejs
 	app.get('/', function(req, res) {
-	    console.log("testing");
+		console.log("test");
+		foods = [];
+        foodPath = 'mas-server-master/dummy_data/foods.json';
+        if (fs.existsSync(foodPath)) {
+            foods = JSON.parse(fs.readFileSync(foodPath));
+        }
+        console.log(foods);
+		data = {
+			user: user,
+			foods: foods
+		};
+		res.render('index', data);
 	});
 
 	// Jiwon stuff
@@ -55,29 +62,24 @@ module.exports = function Route(app, handlers, db, noSQLDB) {
 	// });
 	
 	app.get('/postfood', function(req, res) {
-		var data = {
+		data = {
 			user: user
 		};
 		res.render('postfood', data);
 	});
 	
 	app.post('/postfood', function(req, res) {
-		console.log('testing');
-		var foods = [];
-		var foodPath = 'dummy_data/foods.json';
+		foods = [];
+		foodPath = 'dummy_data/foods.json';
 		if (fs.existsSync(foodPath)) {
-			var foods = JSON.parse(fs.readFileSync(foodPath));
+			foods = JSON.parse(fs.readFileSync(foodPath));
 		}
-		var availFrom = new Date();
-		availFrom.setHours(req.body.timefromhour);
-		availFrom.setMinutes(req.body.timefromminute);
 
-		var newFood = {
-			foodId: Guid.raw() /* TODO */,
+		newFood = {
 			type: req.body.foodtype,
 			name: req.body.dishname,
 			rating: null /* TODO */,
-			availableFrom: availFrom.stringify(),
+			availableFrom: (new Date()).toISOString(),
 			image: '' /* TODO */
 		};
 

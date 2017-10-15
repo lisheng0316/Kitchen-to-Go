@@ -3,6 +3,7 @@
 <head>
     <script type="text/javascript" src="jquery-1.8.3.js"></script>
     <script src="js/dragdrop.js"></script>
+    <script src="js/upload.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -189,7 +190,7 @@
               <div class="form-group">
                 <input type="file" name="files[]" id="js-upload-files" multiple>
               </div>
-              <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+              <button type="button" class="btn btn-sm btn-primary" id="js-upload-submit" onclick="upload()">Upload files</button>
             </div>
           </form>
 
