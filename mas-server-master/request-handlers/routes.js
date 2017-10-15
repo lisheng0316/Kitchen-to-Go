@@ -3,6 +3,7 @@
  * @author: Joel R. Corporan
  */
 const fs = require('fs');
+const formidable = require('formidable');
 
 module.exports = function Route(app, handlers, db, noSQLDB) {
 	
@@ -67,6 +68,42 @@ module.exports = function Route(app, handlers, db, noSQLDB) {
 	});
 	
 	app.post('/postfood', function(req, res) {
+		form = new formidable.IncomingForm();
+		form.uploadDir = "dummy_data/img/";
+		form.keepExtensions = true;
+		form.maxFieldSize = 1024 * 1024 * 1024;
+		form.multiples = true;
+        console.log("test");
+		form.parse(req, function (err, fields, files) {
+			if (err) {
+				res.json({
+					result: "failed",
+					data: {},
+					message: 'Cannot upload images. Error is: ${err}'
+				});
+			}
+			arrayOfFiles = files[""];
+			if (arrayOfFles.length > 0) {
+				fileNames = [];
+				arrayOfFiles.forEach((eachFile)=> {
+					fileNames.push(eachFile.path);
+				});
+				response.json({
+					result: "ok",
+					data: fileNames,
+					numberOfImages: fileNames.length,
+					message: "Uploaded images successfully"
+				});
+			} else {
+				res.json({
+					result: "failed",
+					data: {},
+					numberOfImages: 0,
+					message: "No images to upload."
+				});
+			}
+		});
+
 		foods = [];
 		foodPath = 'dummy_data/foods.json';
 		if (fs.existsSync(foodPath)) {
