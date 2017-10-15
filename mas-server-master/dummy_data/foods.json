@@ -1,1 +1,28 @@
-[]
+[{
+  "id": "f84b93aa-a37c-49a0-9c8a-732bc0cb02b1",
+  "type": "asian",
+  "name": "Rice Bowl",
+  "rating": 4,
+  "image" : "https://i.imgur.com/eTuCPxM.jpg"
+},
+  {
+    "id": "f84b93aa-a37c-49a0-9c8a-732bc0cb02b1",
+    "type": "sandwiches",
+    "name": "Sandwich",
+    "rating": 3,
+    "image" : "https://i.imgur.com/bE4jFyr.jpg"
+  },
+  {
+    "id": "f84b93aa-a37c-49a0-9c8a-732bc0cb02b1",
+    "type": "breakfast",
+    "name": "American Breakfast",
+    "rating": 5,
+    "image" : "https://i.imgur.com/3ghyDQJ.jpg"
+  },
+  {
+    "id": "f84b93aa-a37c-49a0-9c8a-732bc0cb02b1",
+    "type": "asian",
+    "name": "Dumplings",
+    "rating": 2.0,
+    "image" : "https://i.imgur.com/yDD0LCR.jpg"
+  }]

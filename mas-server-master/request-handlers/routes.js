@@ -40,13 +40,11 @@ module.exports = function Route(app, handlers, db, noSQLDB) {
 	
 	// Routes to index.ejs
 	app.get('/', function(req, res) {
-		console.log("test");
 		foods = [];
-        foodPath = 'mas-server-master/dummy_data/foods.json';
+        foodPath = 'dummy_data/foods.json';
         if (fs.existsSync(foodPath)) {
             foods = JSON.parse(fs.readFileSync(foodPath));
         }
-        console.log(foods);
 		data = {
 			user: user,
 			foods: foods
