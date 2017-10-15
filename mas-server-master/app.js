@@ -30,12 +30,11 @@ var CURR_DIR = __dirname;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({strict: false}));
 app.use(helmet());
-var CURR_DIR = __dirname;
+app.set('views', path.join(CURR_DIR, 'public'));
+app.set('view engine', 'ejs');
 
-app.set('view engine', 'html');
-app.set('layout', 'home');
-app.engine('html', require('hogan-express'));
-app.set('views', __dirname + '/public/templates');
+app.set('views', path.join(CURR_DIR, 'public'));
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(CURR_DIR, 'public')));
 
@@ -52,11 +51,9 @@ app.use(function (req, res, next) {
     next();
 });
 
-
-
 // Node App Port
 // var port = config.port || 3000;
-var port = process.env.PORT;
+var port = 3000;
 
 routes(app, "handlers", "db", "noSQLdb");
 

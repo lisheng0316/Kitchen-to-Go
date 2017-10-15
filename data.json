@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Hamburger",
+    "description": "Juicy American burger.",
+    "ingredients": ["lettuce", "tomato", "gluten"],
+    "quantity": 1,
+    "price": 5,
+    "image": "https://www.kingsford.com/wp-content/uploads/2014/11/kfd-howtohamburger-Burgers_5_0391-1024x621.jpg",
+    "expiration_date": "2017-10-20"
+  },
+  {
+    "name": "Steak",
+    "description": "Juicy American steak.",
+    "ingredients": ["beef", "onion", "worchestershire sauce"],
+    "quantity": 1,
+    "price": 10,
+    "image": "http://www.seriouseats.com/recipes/assets_c/2015 /05/Anova-Steak-Guide-Sous-Vide-Photos15-beauty-thumb-1500xauto-423558.jpg",
+    "expiration_date": "2017-10-14"
+  },
+  {
+    "name": "Hot Dog",
+    "description": "Juicy American hot dog",
+    "ingredients": ["mystery meat", "white bread bun", "catsup"],
+    "quantity": 1,
+    "price": 2,
+    "image": "http://8exll2rwl8l1f2ayejq2l9yh.wpengine.netdna-cdn.com/wp-content/uploads/2014/10/hotdog_mustard-main.jpg",
+    "expiration_date": "2017-10-30"
+  },
+  {
+    "name": "Fried Chicken",
+    "description": "Juicy American chicken.",
+    "ingredients": ["chicken", "grease"],
+    "quantity": 4,
+    "price": 6,
+    "image": "https://cdn2.tmbi.com/TOH/Images/Photos/37/1200x1200/Crispy-Fried-Chicken_exps6445_PSG143429D03_05_5b_RMS.jpg",
+    "expiration_date": "2017-10-16"
+  },
+  {
+    "name": "French Fries",
+    "description": "Juicy American deep fried potatoes.",
+    "ingredients": ["potatoes", "grease", "heart attack"],
+    "quantity": 1,
+    "price": 1,
+    "image": "https://i.ytimg.com/vi/ETTyVQrUZt8/maxresdefault.jpg",
+    "expiration_date": "2017-11-31"
+  },
+  {
+    "name": "Ney York Style Pizza",
+    "description": "Juicy American pizza.",
+    "ingredients": ["pepperoni", "cheese", "more cheese"],
+    "quantity": 1,
+    "price": 5,
+    "image": "http://www.mysticpizza.com/admin/resources/pizza-pepperoni-w857h456.jpg",
+    "expiration_date": "2017-10-30"
+  },
+  {
+    "name": "Philly Cheese Steak",
+    "description": "Juicy American Philly Cheese Steak.",
+    "ingredients": ["beef", "onions", "cheese", "white bread"],
+    "quantity": 1,
+    "price": 8,
+    "image": "http://iamafoodblog.com/wp-content/uploads/2017/05/philly-cheesesteak-recipe-2192.jpg",
+    "expiration_date": "2017-10-25"
+  }
+]
