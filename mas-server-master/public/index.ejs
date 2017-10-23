@@ -5,37 +5,208 @@
     <title>Title</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <style>
-        #map {
-            height: 40vh !important;
-            width: 100vw !important;
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <script src="js/script.js"></script>
 	<script src="js/filter.js"></script>
 </head>
 <body>
-	<span><a href='postfood'>Post Your Own Dish</a></span>
-	<span>Signed in as <%= user.name %></span>
-    <div id="map"></div>
-    <div class="">
-        <div class="row">
-			<input class="" type="text" placeholder="Search foods..." id="filter" name="filter" onkeyup="filter()"></input>
+<!-- navigation -->
+    <div class="main-nav">
+        <div class="top-bar main-nav-Col logo-img">
+            <a class="logo-img-detail"></a>
+        </div>
+        <div class="top-bar searchbar main-nav-Col col-md-4" >
+            <!-- old search bar
+            <input class="form-control search-detail" type="text" placeholder="Search foods..." name="filter" onkeyup="filter()">
+            <input class="form-control search-detail"> -->
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="search-query form-control" placeholder="Search foods..." name="filter" onkeyup="filter()"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="top-bar top-bar-elements col-md-2">
+            <span>Signed in as <%= user.name %></span>
+        </div>
+        <div class="top-bar top-bar-elements col-md-2">
+            <span><a href='postfood'>Post Your Own Dish</a></span>
         </div>
     </div>
 
+<!-- banner -->
+    <div class="row img-responsive banner-img" align="center">
+        <h1 class="banner-header">Title</h1>
+        <form class="form-wrapper cf">
+            <input type="text" placeholder="Search for a dish" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+<!-- map -->
+    <div class="row map" id="map"></div>
+
+    <!-- new style -->
+
+    <!-- search list item 1-->
+    <div class="col-sm-6 col-md-4">
+
+        <div class="search-list-card">
+            <!-- img -->
+            <img class="img-responsive" src="/img/beef.jpg">
+            <!--info text -->
+            <div class="info-text-wrapper">
+                <div class="cook-info-wrapper clearfix">
+
+                    <!-- cook information -->
+                    <div class="cook-img-wrapper">
+                        <img class="img-responsive" src="/img/person1.jpg">
+                    </div>
+                    <div class="cook-text">
+                        <a class="cook-name">NAME</a>
+                        <span class="cook-location">ADDRESS</span>
+                    </div>
+
+                    <!-- TODO cook rating -->
+                    <div class="rate">
+                        <img class="img-responsive star-wrapper" src="/img/stars.jpg">
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <a class="title-link">TITLE OF DISH</a>
+                    <div class="title-price">
+                        <span>$12</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- search list item 2-->
+    <div class="col-sm-6 col-md-4">
+        <div class="search-list-card">
+            <!-- img -->
+            <img class="img-responsive" src="/img/fried-eggs.jpg">
+            <!--info text -->
+            <div class="info-text-wrapper">
+                <div class="cook-info-wrapper clearfix">
+
+                    <!-- cook information -->
+                    <div class="cook-img-wrapper">
+                        <img class="img-responsive" src="/img/person2.jpg">
+                    </div>
+                    <div class="cook-text">
+                        <a class="cook-name">NAME</a>
+                        <span class="cook-location">ADDRESS</span>
+                    </div>
+
+                    <!-- TODO cook rating -->
+                    <div class="rate">
+                        <img class="img-responsive star-wrapper" src="/img/stars.jpg">
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <a class="title-link">TITLE OF DISH</a>
+                    <div class="title-price">
+                        <span>$12</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- search list item 3-->
+    <div class="col-sm-6 col-md-4">
+
+        <div class="search-list-card">
+            <!-- img -->
+            <img class="img-responsive" src="/img/hamburger.jpg">
+            <!--info text -->
+            <div class="info-text-wrapper">
+                <div class="cook-info-wrapper clearfix">
+
+                    <!-- cook information -->
+                    <div class="cook-img-wrapper">
+                        <img class="img-responsive" src="/img/person2.jpg">
+                    </div>
+                    <div class="cook-text">
+                        <a class="cook-name">NAME</a>
+                        <span class="cook-location">ADDRESS</span>
+                    </div>
+
+                    <!-- TODO cook rating -->
+                    <div class="rate">
+                        <img class="img-responsive star-wrapper" src="/img/stars.jpg">
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <a class="title-link">TITLE OF DISH</a>
+                    <div class="title-price">
+                        <span>$12</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- search list item 4-->
+    <div class="col-sm-6 col-md-4">
+
+        <div class="search-list-card">
+            <!-- img -->
+            <img class="img-responsive" src="/img/potatoes.jpg">
+            <!--info text -->
+            <div class="info-text-wrapper">
+                <div class="cook-info-wrapper clearfix">
+
+                    <!-- cook information -->
+                    <div class="cook-img-wrapper">
+                        <img class="img-responsive" src="/img/person3.jpg">
+                    </div>
+                    <div class="cook-text">
+                        <a class="cook-name">NAME</a>
+                        <span class="cook-location">ADDRESS</span>
+                    </div>
+
+                    <!-- TODO cook rating -->
+                    <div class="rate">
+                        <img class="img-responsive star-wrapper" src="/img/stars.jpg">
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <a class="title-link">TITLE OF DISH</a>
+                    <div class="title-price">
+                        <span>$12</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- old style --
     <nav>
         <div>
             <ul id="foodlist" name="foodlist">
 				<% foods.forEach(function(food) { %>
 					<li>
                     <div class="col-md-6">
-                        <img class= "foodThumbnails"src="<%= food.image %>" />
+                        <img class= "foodThumbnails li-img"src="<%= food.image %>" />
                         <h3 id="name"><a href=""><%= food.name %></a></h3>
                         <div>
-                            <p>Lorem ipsum dolor sit amet...</p>
+                            <p class="li-p">Lorem ipsum dolor sit amet...</p>
                         </div>
                     </div>
                     <div class="rating col-md-2">
@@ -51,7 +222,7 @@
             </ul>
         </div>
     </nav>
-
+-->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd-peSkPIlELft4XVLxvrvRhH7ZnkY7Ns&callback=initMap"></script>
 
 </body>

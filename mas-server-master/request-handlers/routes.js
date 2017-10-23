@@ -42,7 +42,7 @@ module.exports = function Route(app, handlers, db, noSQLDB) {
 	app.get('/', function(req, res) {
 		console.log("test");
 		foods = [];
-        foodPath = 'mas-server-master/dummy_data/foods.json';
+        foodPath = 'dummy_data/foods.json';
         if (fs.existsSync(foodPath)) {
             foods = JSON.parse(fs.readFileSync(foodPath));
         }

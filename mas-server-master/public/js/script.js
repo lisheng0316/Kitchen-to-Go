@@ -4,6 +4,7 @@
 /*global google*/
 var map, infoWindow;
 
+
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
@@ -39,6 +40,7 @@ var map, infoWindow;
             'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
+google.maps.event.trigger(map, "resize");
 
 
 // $.getJSON('mas-server-master/request-handlers/untitled.json', function(data) {
