@@ -1,0 +1,448 @@
+{{#yield-styles}}
+	
+	<link rel="stylesheet" href="{{STATIC}}/css/nav.css" />
+    <link rel="stylesheet" href="{{STATIC}}/css/search.css" />
+
+{{/yield-styles}}
+
+{{#yield-scripts}}
+
+	<script src="{{STATIC}}/scripts/lib/skel.min.js"></script>
+	<script src="{{STATIC}}/scripts/util.js"></script>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+	        // listen for the window resize event & trigger Google Maps to update too
+		  $(window).resize(function() {
+		    // (the 'map' here is the result of the created 'var map = ...' above)
+		    google.maps.event.trigger(map, "resize");
+		  });
+      }
+    </script>
+	<script async defer
+	    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcZTQi85Ehd8BGB-CDQn1xLj4cxmhdytM&callback=initMap">
+    </script>
+    <script src="{{STATIC}}/scripts/search.js"></script>
+    <script src="{{STATIC}}/scripts/main.js"></script>
+
+{{/yield-scripts}}
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+	<!-- Main -->
+	<div id="main">
+		<div class="inner">
+
+			<!-- Banner -->
+			<section id="map-section">
+				<span class="object">
+					<div id="map"></div>
+				</span>
+			</section>
+
+			<!-- Section -->
+			<section>
+				<!-- <header class="major">
+					<h2>Ipsum sed dolor</h2>
+				</header> -->
+				<div class="posts">
+					<article>
+						<a href="#" class="image"><img src="http://lorempixel.com/1920/800/food/" alt="" /></a>
+						<div class="info">
+							<h3 class="food-title">
+								<span class="cost">$9.88</span>
+								<span>•</span>
+								<span class="plate">Ipsum sed dolorsIpsum sed dolorsIpsum sed dolorsIpsum sed dolors</span>
+							</h3>
+							<ul class="actions">
+								<li>
+									<span class="rating_stars rating_0">
+									  <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+															
+									  <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+									  <span class='r r1' data-rating='1' data-value='1'></span>
+									  <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+									  <span class='r r2' data-rating='2' data-value='2'></span>
+									  <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+									  <span class='r r3' data-rating='3' data-value='3'></span>
+									  <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+									  <span class='r r4' data-rating='4' data-value='4'></span>
+									  <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+									  <span class='r r5' data-rating='5' data-value='5'></span>
+									</span>
+									<p class="review">23 Reviews</p>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<a href="#" class="image"><img src="http://lorempixel.com/1920/800/food/" alt="" /></a>
+						<div class="info">
+							<h3 class="food-title">
+								<span class="cost">$9.88</span>
+								<span>•</span>
+								<span class="plate">Ipsum sed dolorsIpsum sed dolorsIpsum sed dolorsIpsum sed dolors</span>
+							</h3>
+							<ul class="actions">
+								<li>
+									<span class="rating_stars rating_0">
+									  <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+															
+									  <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+									  <span class='r r1' data-rating='1' data-value='1'></span>
+									  <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+									  <span class='r r2' data-rating='2' data-value='2'></span>
+									  <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+									  <span class='r r3' data-rating='3' data-value='3'></span>
+									  <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+									  <span class='r r4' data-rating='4' data-value='4'></span>
+									  <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+									  <span class='r r5' data-rating='5' data-value='5'></span>
+									</span>
+									<p class="review">23 Reviews</p>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<a href="#" class="image"><img src="http://lorempixel.com/1920/800/food/" alt="" /></a>
+						<div class="info">
+							<h3 class="food-title">
+								<span class="cost">$9.88</span>
+								<span>•</span>
+								<span class="plate">Ipsum sed dolorsIpsum sed dolorsIpsum sed dolorsIpsum sed dolors</span>
+							</h3>
+							<ul class="actions">
+								<li>
+									<span class="rating_stars rating_0">
+									  <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+															
+									  <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+									  <span class='r r1' data-rating='1' data-value='1'></span>
+									  <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+									  <span class='r r2' data-rating='2' data-value='2'></span>
+									  <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+									  <span class='r r3' data-rating='3' data-value='3'></span>
+									  <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+									  <span class='r r4' data-rating='4' data-value='4'></span>
+									  <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+									  <span class='r r5' data-rating='5' data-value='5'></span>
+									</span>
+									<p class="review">23 Reviews</p>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<a href="#" class="image"><img src="http://lorempixel.com/1920/800/food/" alt="" /></a>
+						<div class="info">
+							<h3 class="food-title">
+								<span class="cost">$9.88</span>
+								<span>•</span>
+								<span class="plate">Ipsum sed dolorsIpsum sed dolorsIpsum sed dolorsIpsum sed dolors</span>
+							</h3>
+							<ul class="actions">
+								<li>
+									<span class="rating_stars rating_0">
+									  <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+															
+									  <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+									  <span class='r r1' data-rating='1' data-value='1'></span>
+									  <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+									  <span class='r r2' data-rating='2' data-value='2'></span>
+									  <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+									  <span class='r r3' data-rating='3' data-value='3'></span>
+									  <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+									  <span class='r r4' data-rating='4' data-value='4'></span>
+									  <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+									  <span class='r r5' data-rating='5' data-value='5'></span>
+									</span>
+									<p class="review">23 Reviews</p>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<a href="#" class="image"><img src="http://lorempixel.com/1920/800/food/" alt="" /></a>
+						<div class="info">
+							<h3 class="food-title">
+								<span class="cost">$9.88</span>
+								<span>•</span>
+								<span class="plate">Ipsum sed dolorsIpsum sed dolorsIpsum sed dolorsIpsum sed dolors</span>
+							</h3>
+							<ul class="actions">
+								<li>
+									<span class="rating_stars rating_0">
+									  <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+															
+									  <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+									  <span class='r r1' data-rating='1' data-value='1'></span>
+									  <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+									  <span class='r r2' data-rating='2' data-value='2'></span>
+									  <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+									  <span class='r r3' data-rating='3' data-value='3'></span>
+									  <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+									  <span class='r r4' data-rating='4' data-value='4'></span>
+									  <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+									  <span class='r r5' data-rating='5' data-value='5'></span>
+									</span>
+									<p class="review">23 Reviews</p>
+								</li>
+							</ul>
+						</div>
+					</article>
+					<article>
+						<a href="#" class="image"><img src="http://lorempixel.com/1920/800/food/" alt="" /></a>
+						<div class="info">
+							<h3 class="food-title">
+								<span class="cost">$9.88</span>
+								<span>•</span>
+								<span class="plate">Ipsum sed dolorsIpsum sed dolorsIpsum sed dolorsIpsum sed dolors</span>
+							</h3>
+							<ul class="actions">
+								<li>
+									<span class="rating_stars rating_0">
+									  <span class='s' data-low='0.5' data-high='1'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='1.5' data-high='2'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='2.5' data-high='3'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='3.5' data-high='4'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+									  <span class='s' data-low='4.5' data-high='5'><i class="fa fa-star-o"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star"></i></span>
+															
+									  <span class='r r0_5' data-rating='1' data-value='0.5'></span>
+									  <span class='r r1' data-rating='1' data-value='1'></span>
+									  <span class='r r1_5' data-rating='15' data-value='1.5'></span>
+									  <span class='r r2' data-rating='2' data-value='2'></span>
+									  <span class='r r2_5' data-rating='25' data-value='2.5'></span>
+									  <span class='r r3' data-rating='3' data-value='3'></span>
+									  <span class='r r3_5' data-rating='35' data-value='3.5'></span>
+									  <span class='r r4' data-rating='4' data-value='4'></span>
+									  <span class='r r4_5' data-rating='45' data-value='4.5'></span>
+									  <span class='r r5' data-rating='5' data-value='5'></span>
+									</span>
+									<p class="review">23 Reviews</p>
+								</li>
+							</ul>
+						</div>
+					</article>
+				</div>
+			</section>
+
+		</div>
+	</div>
+
+<!-- Sidebar -->
+	<div id="sidebar">
+		<div class="inner">
+
+			<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+
+			<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Filter by</h2>
+					</header>
+					<ul>
+						<!-- <li><a href="index.html">Homepage</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li> -->
+						<li>
+							<span class="type opener">Type <span class="sub-section"> (By Continents)</span></span>
+							<ul>
+								<li>
+									<div class="type-section">
+										<input type="checkbox" id="north-america" name="north-america">
+										<label for="north-america">North America</label>
+									</div>
+									<div class="type-section">
+										<input type="checkbox" id="south-america" name="south-america">
+										<label for="south-america">South America</label>
+									</div>
+									<div class="type-section">
+										<input type="checkbox" id="asia" name="asia">
+										<label for="asia">Asia</label>
+									</div>
+									<div class="type-section">
+										<input type="checkbox" id="europe" name="europe">
+										<label for="europe">Europe</label>
+									</div>
+									<div class="type-section">
+										<input type="checkbox" id="africa" name="africa">
+										<label for="africa">Africa</label>
+									</div>
+									<div class="type-section">
+										<input type="checkbox" id="australia" name="australia">
+										<label for="australia">Australia</label>
+									</div>
+									<div class="type-section">
+										<input type="checkbox" id="antarctica" name="antarctica">
+										<label for="antarctica">Antarctica</label>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<!-- <li><a href="#">Etiam Dolore</a></li>
+						<li><a href="#">Adipiscing</a></li> -->
+						<li>
+							<span class="miles opener">Miles</span>
+							<ul>
+								<li>
+									<div style="height: 100px;display: flex;justify-content: center;">
+  										<input type="range" list="miles-list">
+										<datalist id="miles-list">
+											<option value="0" label="1m">
+											<option value="10">
+											<option value="20" label="5m">
+											<option value="30">
+											<option value="40" label="10m">
+											<option value="50">
+											<option value="60" label="15m">
+											<option value="70">
+											<option value="80" label="20m">
+											<option value="90">
+											<option value="100" label="25m">
+										</datalist>
+									</div>
+								</li>
+								<!-- <li><a href="#">Ipsum Adipiscing</a></li>
+								<li><a href="#">Tempus Magna</a></li>
+								<li><a href="#">Feugiat Veroeros</a></li> -->
+							</ul>
+						</li>
+
+						<li>
+							<span class="price opener">Price</span>
+							<ul>
+								<li><a href="#">Lorem Dolor</a></li>
+								<li><a href="#">Ipsum Adipiscing</a></li>
+								<li><a href="#">Tempus Magna</a></li>
+								<li><a href="#">Feugiat Veroeros</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href="#">Maximus Erat</a></li>
+						<li><a href="#">Sapien Mauris</a></li>
+						<li><a href="#">Amet Lacinia</a></li> -->
+					</ul>
+				</nav>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; K2GO. All rights reserved.</p>
+				</footer>
+
+		</div>
+	</div>
+</div>

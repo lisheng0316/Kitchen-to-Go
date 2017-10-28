@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>{{TITLE}}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+
+		<meta content="{{DESCRIPTION}}" name="description" />
+		<meta content="{{KEYWORDS}}" name="keywords" />
+		<meta content="{{IMAGE}}" name="thumbnail" />
+		<meta property="og:title" content="{{TITLE}}" />
+		<meta property="og:description" content="{{DESCRIPTION}}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{URL}}" />
+		<meta property="og:site_name" content="{{TITLE}}" />
+		<meta property="og:image" content="{{IMAGE}}" />
+
+		<meta name="twitter:title" content={{TITLE}}>
+		<meta name="twitter:site" content="{{URL}}">
+		<meta name="twitter:creator" content="@k2go">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:description" content="{{DESCRIPTION}}" />
+		<meta name="twitter:image" content="{{IMAGE}}">
+
+		<meta property="description" content="{{DESCRIPTION}}" />
+		<meta itemprop="image" content="{{IMAGE}}" />
+
+		<!-- Favicon--> 
+	    <link rel="apple-touch-icon" sizes="57x57" href="{{CDN}}/assets/favicon/apple-icon-57x57.png">
+	    <link rel="apple-touch-icon" sizes="60x60" href="{{CDN}}/assets/favicon/apple-icon-60x60.png">
+	    <link rel="apple-touch-icon" sizes="72x72" href="{{CDN}}/assets/favicon/apple-icon-72x72.png">
+	    <link rel="apple-touch-icon" sizes="76x76" href="{{CDN}}/assets/favicon/apple-icon-76x76.png">
+	    <link rel="apple-touch-icon" sizes="114x114" href="{{CDN}}/assets/favicon/apple-icon-114x114.png">
+	    <link rel="apple-touch-icon" sizes="120x120" href="{{CDN}}/assets/favicon/apple-icon-120x120.png">
+	    <link rel="apple-touch-icon" sizes="144x144" href="{{CDN}}/assets/favicon/apple-icon-144x144.png">
+	    <link rel="apple-touch-icon" sizes="152x152" href="{{CDN}}/assets/favicon/apple-icon-152x152.png">
+	    <link rel="apple-touch-icon" sizes="180x180" href="{{CDN}}/assets/favicon/apple-icon-180x180.png">
+	    <link rel="icon" type="image/png" sizes="192x192"  href="{{CDN}}/assets/favicon/android-icon-192x192.png">
+	    <link rel="icon" type="image/png" sizes="32x32" href="{{CDN}}/assets/favicon/favicon-32x32.png">
+	    <link rel="icon" type="image/png" sizes="96x96" href="{{CDN}}/assets/favicon/favicon-96x96.png">
+	    <link rel="icon" type="image/png" sizes="16x16" href="{{CDN}}/assets/favicon/favicon-16x16.png">
+	    <link rel="manifest" href="{{CDN}}/assets/favicon/manifest.json">
+	    <meta name="msapplication-TileColor" content="#ffffff">
+	    <meta name="msapplication-TileImage" content="{{CDN}}/assets/favicon/ms-icon-144x144.png">
+	    <meta name="theme-color" content="#ffffff">
+
+  		<script src="{{STATIC}}/scripts/lib/jquery.min.js"></script>
+  		<script src="{{STATIC}}/scripts/lib/jquery.scrollex.min.js"></script>
+		<script src="{{STATIC}}/scripts/lib/jquery.scrolly.min.js"></script>
+		<script src="{{STATIC}}/scripts/lib/modernizr.js"></script>
+
+		<link rel="stylesheet" href="/css/nav.css" />
+
+		{{{yield-styles}}}
+
+	</head>
+	<body>
+		<!-- Header -->
+		<!-- <header id="header" class="alt">
+			<a href="/" class="logo"><img src="/images/logo.png"></a>
+			<nav>
+				<a href="#" class="button">Log In</a>
+			</nav>
+		</header> -->
+		<header id="header" role="banner">
+			<div id="cd-logo"><a href="#0"><img src="/images/logo.png" alt="Logo"></a></div>
+
+			<nav class="main-nav">
+				<ul>
+					<!-- inser more links here -->
+					<li><a class="cd-signin" href="#0">Sign in</a></li>
+					<li><a class="cd-signup" href="#0">Sign up</a></li>
+				</ul>
+			</nav>
+		</header>
+	
+	{{{ yield }}}
+		
+	</body>
+
+	{{^auth}}
+		<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+			<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+				<ul class="cd-switcher">
+					<li><a href="#0">Sign in</a></li>
+					<li><a href="#0">New account</a></li>
+				</ul>
+
+				<div id="cd-login"> <!-- log in form -->
+					<form class="cd-form">
+						<p class="fieldset">
+							<label class="image-replace cd-email" for="signin-email">E-mail</label>
+							<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+							<span class="cd-error-message">Error message here!</span>
+						</p>
+
+						<p class="fieldset">
+							<label class="image-replace cd-password" for="signin-password">Password</label>
+							<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+							<a href="#0" class="hide-password">Hide</a>
+							<span class="cd-error-message">Error message here!</span>
+						</p>
+
+						<p class="fieldset">
+							<input type="checkbox" id="remember-me" checked>
+							<label for="remember-me">Remember me</label>
+						</p>
+
+						<p class="fieldset">
+							<input class="full-width" type="submit" value="Login">
+						</p>
+					</form>
+					
+					<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+					<!-- <a href="#0" class="cd-close-form">Close</a> -->
+				</div> <!-- cd-login -->
+
+				<div id="cd-signup"> <!-- sign up form -->
+					<form class="cd-form">
+						<p class="fieldset">
+							<label class="image-replace cd-username" for="signup-username">Username</label>
+							<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+							<span class="cd-error-message">Error message here!</span>
+						</p>
+
+						<p class="fieldset">
+							<label class="image-replace cd-email" for="signup-email">E-mail</label>
+							<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+							<span class="cd-error-message">Error message here!</span>
+						</p>
+
+						<p class="fieldset">
+							<label class="image-replace cd-password" for="signup-password">Password</label>
+							<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+							<a href="#0" class="hide-password">Hide</a>
+							<span class="cd-error-message">Error message here!</span>
+						</p>
+
+						<p class="fieldset">
+							<input type="checkbox" id="accept-terms">
+							<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+						</p>
+
+						<p class="fieldset">
+							<input class="full-width has-padding" type="submit" value="Create account">
+						</p>
+					</form>
+
+					<!-- <a href="#0" class="cd-close-form">Close</a> -->
+				</div> <!-- cd-signup -->
+
+				<div id="cd-reset-password"> <!-- reset password form -->
+					<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+					<form class="cd-form">
+						<p class="fieldset">
+							<label class="image-replace cd-email" for="reset-email">E-mail</label>
+							<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+							<span class="cd-error-message">Error message here!</span>
+						</p>
+
+						<p class="fieldset">
+							<input class="full-width has-padding" type="submit" value="Reset password">
+						</p>
+					</form>
+
+					<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+				</div> <!-- cd-reset-password -->
+				<a href="#0" class="cd-close-form">Close</a>
+			</div> <!-- cd-user-modal-container -->
+		</div> <!-- cd-user-modal -->
+	{{/auth}}
+
+	<!-- Scripts -->
+    <script src="{{STATIC}}/scripts/lib/cryptoJS/rollups/aes.js"></script>
+    <script src="{{STATIC}}/scripts/lib/cryptoJS/components/mode-cfb-min.js"></script>
+	
+	<!-- Custom Scripts -->
+	{{{yield-scripts}}}
+
+</html>

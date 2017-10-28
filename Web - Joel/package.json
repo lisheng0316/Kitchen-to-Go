@@ -1,0 +1,24 @@
+{
+  "name": "mas-server",
+  "version": "1.0.0",
+  "description": "Server for MAS App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelcorporan/mas-server.git"
+  },
+  "author": "mas-students",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joelcorporan/mas-server/issues"
+  },
+  "homepage": "https://github.com/joelcorporan/mas-server#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "helmet": "^3.8.2",
+    "hogan-express": "^0.5.2"
+  }
+}
