@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="js/script.js"></script>
+    <script src="js/filter.js"></script>
+</head>
+<body>
+
+<!-- navigation -->
+<div class="main-nav">
+    <div class="top-bar main-nav-Col logo-img">
+        <a class="logo-img-detail"></a>
+    </div>
+    <div class="top-bar searchbar main-nav-Col col-md-4" >
+        <!-- old search bar
+        <input class="form-control search-detail" type="text" placeholder="Search foods..." name="filter" onkeyup="filter()">
+        <input class="form-control search-detail"> -->
+        <div id="custom-search-input">
+            <div class="input-group col-md-12">
+                <input type="text" class="search-query form-control" placeholder="Search foods..." name="filter" onkeyup="filter()"/>
+                <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="top-bar top-bar-elements col-md-2">
+        <span>Signed in as user</span>
+    </div>
+    <div class="top-bar top-bar-elements col-md-2">
+        <span><a href='postfood'>Post Your Own Dish</a></span>
+    </div>
+</div>
+
+<!-- Cook info -->
+    <div class="page-container-detail-wrapper page-container-wrapper banner-header">
+        <!-- picture and credentials -->
+        <div class="col-lg-3 col-md-4">
+            <div class="cook-img-profile-wrapper">
+                <img class="cook-img img-responsive" src="img/person2.jpg">
+            </div>
+            <div class="profile-credentials-title">
+                <p>Credentials</p>
+            </div>
+            <div class="profile-credentials">
+                <ul>
+                    <li>Cook certificate 1</li>
+                    <li>Cook certificate 2</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- name and menu -->
+        <div class="col-lg-9 col-md-8 col-sm-12">
+            <h1>
+                First Last
+            </h1>
+            <h2>
+                Status: Cook
+            </h2>
+            <h3>
+                City, State, Joined year
+            </h3>
+            <p>report user</p>
+            <p>
+                A short description of user from user input
+            </p>
+
+
+        </div>
+    </div>
+
+</body>
+</html>

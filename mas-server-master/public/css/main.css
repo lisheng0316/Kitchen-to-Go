@@ -350,7 +350,7 @@ nav ul {
 }
 
 .banner-header {
-    margin-top: 50px;
+    margin-top: 60px;
 }
 
 .card-img {
@@ -374,8 +374,13 @@ nav ul {
 
 .cook-img-wrapper {
     width: 54px;
+    height: 54px;
     float: left;
     margin-right: 6px;
+}
+.cook-img-profile-wrapper {
+    width: 240px;
+    height: 240px;
 }
 
 .cook-img {
@@ -424,7 +429,6 @@ nav ul {
     width: calc(100% - 52px);
     color: inherit;
 }
-
 .title-price {
     margin-top: 1px;
     margin-right:1px;
@@ -436,5 +440,95 @@ nav ul {
 }
 
 .dish-wrapper {
-    margin-top: 60px;
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+    position: relative;
+}
+.placehold-stars {
+    width: 200px;
+    padding: 10px;
+}
+.dish-title-wrapper {
+    position: absolute;
+    bottom: 0;
+    margin: 20px;
+    margin-left: 24px;
+    border-radius: 10px;
+    background-color: #fbfbfb;
+    width: 50vw;
+}
+.dish-title {
+    padding-left: 20px;
+}
+.dish-phone {
+    padding-left: 20px;
+}
+.page-container-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 1080px;
+    position: relative;
+    padding-top: 10px;
+}
+.page-container-detail-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
+.dish-page-nav {
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #484848;
+    font-weight: 700;
+    display: inline;
+    text-transform: uppercase;
+}
+.dish-page-nav-wrapper {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #e6e6e6;
+}
+.dish-page-detail-ul {
+    width: 31%;
+    vertical-align: top;
+    margin-right: 0;
+    margin-left: 1.5rem;
+}
+.dish-page-detail-li {
+    clear: right;
+    width: 100%;
+    line-height: 1.3rem;
+    margin-bottom: 1rem;
+}
+.dish-page-review-wrapper {
+    margin-top: 20px;
+    margint-bottom: 10px;
+}
+.dish-page-review {
+    margin: 0;
+    float: left;
+    padding: 0 !important;
+}
+.profile-credentials-title {
+    border: 1px solid #e6e6e6;
+    background-color: #fbfbfb;
+    padding: 10px;
+}
+.profile-credentials {
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    border-top: none;
 }

@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="top-bar top-bar-elements">
-            <span>Signed in as <%= user.name %></span>
+            <span>Signed in as User</span>
         </div>
         <div class="top-bar top-bar-elements">
             <span><a href='postfood'>Post Your Own Dish</a></span>
@@ -42,14 +42,59 @@
     </div>
 
 <!-- banner -->
-    <div class="dish-wrapper row">
-        <div class="col-md-6">
-            <img class="img-responsive" src="/img/beef.jpg">
-        </div>
-        <div class="col-md-6">
-            <h1>Title</h1>
+    <div class="row banner-header img-responsive dish-wrapper" style='background-image: url("img/beef.jpg");'>
+        <div class="dish-title-wrapper">
+            <h1 class="dish-title">
+                Title
+            </h1>
+            <div class="cook-img-wrapper dish-title">
+                <img class="img-responsive" src="img/person1.jpg">
+            </div>
+            <span class="dish-phone">
+                000-000-0000
+            </span>
+            <div class="placehold-stars">
+                <img class="img-responsive" src="img/5-stars.png">
+            </div>
         </div>
     </div>
+
+<!-- dish detail -->
+    <div class="page-container-wrapper page-container-detail-wrapper">
+        <nav class="dish-page-nav-wrapper">
+            <span class="dish-page-nav">
+                Details
+            </span>
+            <span class="dish-page-nav">
+                Review
+            </span>
+        </nav>
+        <h2>
+            Ingredients
+        </h2>
+        <ul class="dish-page-ingr-ul">
+            <li class="dish-page-ingr-li">ingredient 1</li>
+            <li class="dish-page-ingr-li">ingredient 2</li>
+        </ul>
+        <h2>
+            Food Type
+        </h2>
+        <p>
+            food-type
+        </p>
+        <div class="dish-page-review-wrapper">
+            <h2 class="dish-page-review">
+                Reviews 10
+            </h2>
+            <div class="placehold-stars dish-page-review">
+                <img class="img-responsive" src="img/5-stars.png">
+            </div>
+        </div>
+
+
+
+    </div>
+
 
 
 </body>
