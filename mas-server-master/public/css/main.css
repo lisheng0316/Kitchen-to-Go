@@ -660,3 +660,48 @@ nav ul {
 .detail-side-title {
     font-size: 20px;
 }
+.breadcrumb-title {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 40px 20px;
+
+}
+.breadcrumb-title h1 {
+    color: #424242;
+    font-size: 24px;
+    font-weight: normal;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 767px) {
+    .breadcrumb-title .breadcrumb {
+        clear: both;
+        float: none;
+        padding: 10px 0 0 0;
+    }
+}
+.breadcrumb {
+    background-color: transparent;
+    border-radius: 0;
+    color: #424242;
+    float: right;
+    margin: 3px 0 0 0;
+    padding: 0;
+}
+.breadcrumb a {
+    color: #9E9E9E;
+}
+.breadcrumb i {
+    color: #d2d8d8;
+    font-size: 18px;
+    margin: 0 12px;
+    vertical-align: middle;
+}
+.breadcrumb li:before {
+    display: none;
+}
+.box1 {
+    margin-left: auto;
+    margin-right: auto;
+}
