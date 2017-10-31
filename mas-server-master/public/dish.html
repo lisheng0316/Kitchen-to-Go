@@ -7,94 +7,173 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/leaflet.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script src="js/script.js"></script>
     <script src="js/filter.js"></script>
+    <script src="js/leaflet.js"></script>
 </head>
 <body>
-<!-- navigation -->
-    <div class="main-nav">
-        <div class="top-bar main-nav-Col logo-img">
-            <a class="logo-img-detail"></a>
-        </div>
-        <div class="top-bar searchbar main-nav-Col" >
-            <!-- old search bar
-            <input class="form-control search-detail" type="text" placeholder="Search foods..." name="filter" onkeyup="filter()">
-            <input class="form-control search-detail"> -->
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="search-query form-control" placeholder="Search foods..." name="filter" onkeyup="filter()"/>
-                    <span class="input-group-btn">
-                            <button class="btn btn-danger" type="button">
-                                <span class=" glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                </div>
-            </div>
-        </div>
-        <div class="top-bar top-bar-elements">
-            <span>Signed in as User</span>
-        </div>
-        <div class="top-bar top-bar-elements">
-            <span><a href='postfood'>Post Your Own Dish</a></span>
-        </div>
-    </div>
 
-<!-- banner -->
-    <div class="row banner-header img-responsive dish-wrapper" style='background-image: url("img/beef.jpg");'>
-        <div class="dish-title-wrapper">
-            <h1 class="dish-title">
-                Title
-            </h1>
-            <div class="cook-img-wrapper dish-title">
-                <img class="img-responsive" src="img/person1.jpg">
-            </div>
-            <span class="dish-phone">
-                000-000-0000
-            </span>
-            <div class="placehold-stars">
-                <img class="img-responsive" src="img/5-stars.png">
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <div class="row">
 
-<!-- dish detail -->
-    <div class="page-container-wrapper page-container-detail-wrapper">
-        <nav class="dish-page-nav-wrapper">
-            <span class="dish-page-nav">
-                Details
-            </span>
-            <span class="dish-page-nav">
-                Review
-            </span>
-        </nav>
-        <h2>
-            Ingredients
-        </h2>
-        <ul class="dish-page-ingr-ul">
-            <li class="dish-page-ingr-li">ingredient 1</li>
-            <li class="dish-page-ingr-li">ingredient 2</li>
-        </ul>
-        <h2>
-            Food Type
-        </h2>
-        <p>
-            food-type
-        </p>
-        <div class="dish-page-review-wrapper">
-            <h2 class="dish-page-review">
-                Reviews 10
-            </h2>
-            <div class="placehold-stars dish-page-review">
-                <img class="img-responsive" src="img/5-stars.png">
-            </div>
-        </div>
+        <div class="col-md-8 col-lg-9">
+            <div class="pbt-1">
+                <div class="on-list-1">
+                    <div class="dish-img">
+                        <!-- /.dish-item -->
+                        <div class="img-responsive">
+                            <div class="dish-img-item" style="background-image: url('img/hamburger.jpg');">
+                                <div class="dish-img-item-description">
+                                    This is a Hamburger
+                                </div><!-- /.gallery-item-description -->
+                            </div>
+                        </div>
 
+                    </div><!-- /.gallery -->
 
+                    <h2>Food Description</h2>
 
-    </div>
+                    <p>
+                        Duis suscipit turpis suscipit lectus ultricies, placerat fermentum orci fringilla. Mauris semper magna cursus diam suscipit consectetur.
+                    </p>
 
+                    <p>
+                        Integer condimentum sodales metus, quis pellentesque nisi tempor at. Quisque ornare efficitur risus eu bibendum. Donec feugiat consequat magna in interdum. Donec malesuada orci et mi fermentum, ac tincidunt arcu tincidunt. Ut fringilla tellus sem, quis rhoncus dolor condimentum id. Vivamus ut commodo felis. Fusce in lacus egestas, mattis ex et, molestie est.
+                    </p>
+
+                    <h2>Ingredients</h2>
+                    <ul class="ingred">
+                        <li class="glyphicon glyphicon-ok-circle">Fish</li>
+                        <li class="glyphicon glyphicon-ok-circle">Gluten</li>
+                        <li class="glyphicon glyphicon-ok-circle">Cilantro</li>
+                        <li class="glyphicon glyphicon-ok-circle">Milk</li>
+                        <li class="glyphicon glyphicon-ok-circle">Almonds</li>
+                        <li class="glyphicon glyphicon-ok-circle">Peanut</li>
+                        <li class="glyphicon glyphicon-ok-circle">Vinegar</li>
+                        <li class="glyphicon glyphicon-ok-circle">Cheese</li>
+                        <li class="glyphicon glyphicon-ok-circle">Eggs</li>
+                        <li class="glyphicon glyphicon-ok-circle">Carrots</li>
+                        <li class="glyphicon glyphicon-ok-circle">Pork</li>
+                        <li class="glyphicon glyphicon-ok-circle">Wheat</li>
+                        <li class="glyphicon glyphicon-ok-circle">Grill</li>
+                        <li class="glyphicon glyphicon-ok-circle">Hairdryer</li>
+                        <li class="glyphicon glyphicon-ok-circle">Heating</li>
+                        <li class="glyphicon glyphicon-ok-circle">Hi-fi</li>
+                        <li class="glyphicon glyphicon-ok-circle">Internet</li>
+                        <li class="glyphicon glyphicon-ok-circle">Chicken</li>
+                    </ul>
+
+                    <h2>Reservation Hours</h2>
+
+                    <div class="available-hours-wrapper">
+                        <table class="available-hours">
+                            <thead>
+                            <tr>
+                                <th>MONDAY</th>
+                                <th>TUESDAY</th>
+                                <th>WEDNESDAY</th>
+                                <th>THURSDAY</th>
+                                <th>FRIDAY</th>
+                                <th>SATURDAY</th>
+                                <th>SUNDAY</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td class="availability">
+                                    <span class="from">8:00 am</span> <span class="separator">-</span> <span class="to">8:00 pm</span>
+                                </td>
+
+                                <td class="availability">
+                                    <span class="from">9:00 am</span> <span class="separator">-</span> <span class="to">9:00 pm</span>
+                                </td>
+
+                                <td class="availability">
+                                    <span class="from">8:00 am</span> <span class="separator">-</span> <span class="to">3:00 pm</span>
+                                </td>
+
+                                <td class="availability">
+                                    <span class="from">7:00 am</span> <span class="separator">-</span> <span class="to">9:00 pm</span>
+                                </td>
+
+                                <td class="availability">
+                                    <span class="from">10:00 am</span> <span class="separator">-</span> <span class="to">5:00 pm</span>
+                                </td>
+
+                                <td class="availability">
+                                    <span class="from">8:00 am</span> <span class="separator">-</span> <span class="to">11:00 am</span>
+                                </td>
+
+                                <td class="availability">closed</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- /.opening-hours-wrapper -->
+
+                    <h2>Listing Position</h2>
+
+                    <div id="map"></div>
+                    <script>
+                        function initMap() {
+                            var uluru = {lat: -25.363, lng: 131.044};
+                            var map = new google.maps.Map(document.getElementById('map'), {
+                                zoom: 4,
+                                center: uluru
+                            });
+                            var marker = new google.maps.Marker({
+                                position: uluru,
+                                map: map
+                            });
+                        }
+                    </script>
+                    <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcZTQi85Ehd8BGB-CDQn1xLj4cxmhdytM&callback=initMap">
+                    </script>
+                    <!-- /.listing-position -->
+
+                </div><!-- /.listing-detail -->
+            </div><!-- /.push-top-bottom -->
+        </div><!-- /.col-sm-9 -->
+
+        <div class="col-md-4 col-lg-3">
+
+                <div class="detail-side">
+                    <div class="overview">
+                        <ul>
+                            <li><strong>Price</strong><span>$10</span></li>
+                            <li><strong>Location</strong><span>New York</span></li>
+                            <li><strong>Food Type</strong><span>American</span></li>
+                            <li><strong>Rating</strong><span>4.2 by 2 users</span></li>
+                        </ul>
+                    </div><!-- /.overview -->
+                </div><!-- /.detail-side -->
+
+                <div class="detail-side">
+                    <h2 class="widgettitle">Contact Information</h2>
+
+                    <ul class="contact">
+                        <li><i class="glyphicon glyphicon-envelope"></i> <a href="mailto:hi@example.com">hi@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-phone"></i> 404-990-2029</li>
+                        <li><i class="glyphicon glyphicon-map-marker"></i> 1900 Pico Blvd<br>Santa Monica, CA</li>
+                    </ul>
+                </div><!-- /.widget -->
+
+                <div class="detail-side widget-background-white">
+                    <h3 class="widgettitle">Make a Reservation</h3>
+
+                    <form method="post" action="?">
+                        <div class="form-group-btn">
+                            <button type="submit" class="btn btn-primary btn-block btn-large">Reserve Now</button>
+                        </div><!-- /.form-group-btn -->
+                    </form>
+                </div><!-- /.detail-side -->
+        </div><!-- /.col-* -->
+    </div><!-- /.row -->
+</div>
 
 
 </body>
