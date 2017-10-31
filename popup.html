@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+
+    <!-- your app's js -->
+    <script src="//rawgit.com/njleonzhang/ionic-number-picker/master/ionic-number-picker.js"></script>
+
+</head>
+<body>
+    <div class="main">
+        <h1>An Animated Lil' Popup</h1>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin non rhoncus diam, a porta diam! Nunc ultricies risus quis convallis consequat! Phasellus dapibus tortor eu finibus tempor. Sed ut malesuada turpis, vitae luctus nisi. Suspendisse vitae libero sed libero eleifend convallis.</p>
+        <a class="btn popup-btn" href="#">Click Me!</a>
+    </div>
+
+    <div class="popup-wrap">
+        <div class="popup-box">
+            <h2>Title of Popup</h2>
+            <h3>A sub-heading for the popup with a little description.</h3>
+            <div ng-app="starter">
+                <ion-pane >
+                    <ion-content ng-controller="controller">
+                        <div class="list">
+                            <div class="item item-input">
+                                <span class="input-label">number：</span>
+                                <h-number value="test.count" min="1" step="1" change="onNumberChanged()"></h-number>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-pane>
+            </div>
+            <a class="close-btn popup-close" href="#">x</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+    <script type="text/javascript" src="numberpicker.js"></script>
+</body>
+</html>
