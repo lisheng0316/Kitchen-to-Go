@@ -3,44 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <link rel="stylesheet" href="popup.css">
-    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-
-    <!-- ionic/angularjs js -->
-    <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-
-    <!-- your app's js -->
-    <script src="//rawgit.com/njleonzhang/ionic-number-picker/master/ionic-number-picker.js"></script>
 
 </head>
 <body>
-    <div class="main">
-        <h1>An Animated Lil' Popup</h1>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin non rhoncus diam, a porta diam! Nunc ultricies risus quis convallis consequat! Phasellus dapibus tortor eu finibus tempor. Sed ut malesuada turpis, vitae luctus nisi. Suspendisse vitae libero sed libero eleifend convallis.</p>
-        <a class="btn popup-btn" href="#">Click Me!</a>
-    </div>
+    <div class="obscure">
+        <div class="popup animationClose">
+            <h1>Dish titles(from db)</h1>
+            <h2>Description</h2>
 
-    <div class="popup-wrap">
-        <div class="popup-box">
-            <h2>Title of Popup</h2>
-            <h3>A sub-heading for the popup with a little description.</h3>
-            <div ng-app="starter">
-                <ion-pane >
-                    <ion-content ng-controller="controller">
-                        <div class="list">
-                            <div class="item item-input">
-                                <span class="input-label">number：</span>
-                                <h-number value="test.count" min="1" step="1" change="onNumberChanged()"></h-number>
-                            </div>
-                        </div>
-                    </ion-content>
-                </ion-pane>
+            <div class="wan-spinner wan-spinner-3">
+                <a href="javascript:void(0)" class="minus">-</a>
+                <input type="text" value="1">
+                <a href="javascript:void(0)" class="plus">+</a>
             </div>
-            <a class="close-btn popup-close" href="#">x</a>
+
+
+            <button onsubmit="#">Add to your order</button>
+            <a class="closeBtn" href="#">Close</a>
+
         </div>
     </div>
+
+    <a class="openBtn" href="#">Click!</a>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+    <script src="numberpicker.js.js"></script>
+    <script src=""></script>
+    <script>
+        (function () {
+            'use strict';
+
+            angular.module('demoApp', ['jh.angular-number-picker'])
+                .controller('demoCtrl', demoCtrl);
+
+            demoCtrl.$inject = [];
+
+            function demoCtrl() {
+                var vm = this;
+
+                vm.number = 0;
+            }
+
+        })();
+    </script>
     <script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="popup.js"></script>
-    <script type="text/javascript" src="numberpicker.js"></script>
+
 </body>
 </html>

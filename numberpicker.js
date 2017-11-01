@@ -1,26 +1,17 @@
-/**
- * Created by Sheng on 10/30/17.
- */
-angular.module('starter', ['ionic', 'ionicNumberPicker'])
+var demo = angular.module('demo', [window.ngNumberPicker]);
 
-    .run(function ($ionicPlatform) {
-        $ionicPlatform.ready(function () {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
-            if (window.cordova && window.cordova.plugins.Keyboard) {
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            }
-            if (window.StatusBar) {
-                StatusBar.styleDefault();
-            }
-        });
-    })
+demo.controller('DemoController', ['$scope', function($scope) {
 
-    .controller('controller', function ($scope) {
-        $scope.test = {};
-        $scope.test.count = 1;
-        $scope.onNumberChanged = function(){
-            console.log($scope.test.count);
-        }
+    $scope.input = {
+        num: 3
+    };
 
-    });
+    $scope.getNumber = function() {
+        alert('The number is: [' + $scope.input.num + ']');
+    };
+
+    $scope.onChanged = function(){
+        console.log('The number is Changed ', $scope.input.num);
+    };
+
+}]);

@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="assets/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/libraries/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/leaflet.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/leaflet.markercluster.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/leaflet.markercluster.default.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/materialist.css" rel="stylesheet" type="text/css" id="css-primary">
+    <!--datepicker-->
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+
+    <title>Materialist - Submit Listing</title>
+
+</head>
+
+<body class="">
+<div class="page-wrapper">
+    <div class="header-wrapper">
+        <div class="header">
+            <div class="header-inner">
+                <div class="header-top">
+                    <div class="container">
+                        <a href="/">
+                            <img src="assets/img/logo.png" alt="" class="header-top-logo">
+                        </a>
+
+                        <div class="nav-primary-wrapper collapse navbar-toggleable-sm">
+                            <ul class="nav nav-pills ">
+                                <li class="nav-item has-submenu">
+                                    <a href="index.html" class="nav-link ">Home</a>
+
+                                    <ul class="submenu">
+                                        <li><a href="index-leaflet.html">Leaflet Map</a></li>
+                                        <li><a href="index-carousel.html">Image Carousel</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item has-submenu">
+                                    <a href="listings.html" class="nav-link ">Listings</a>
+
+                                    <ul class="submenu">
+                                        <li><a href="listings.html">Listings Grid</a></li>
+                                        <li><a href="listings-map.html">Listings Map</a></li>
+                                        <li><a href="listing-detail.html">Detail Page</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item has-submenu">
+                                    <a href="#" class="nav-link active">Pages</a>
+                                    <ul class="submenu">
+                                        <li><a href="filters.html">Filters</a></li>
+                                        <li><a href="submit.html">Submit Listing</a></li>
+                                        <li><a href="pricing.html">Pricing</a></li>
+                                        <li><a href="blog.html">Blog List</a></li>
+                                        <li><a href="blog-detail.html">Blog Detail</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="grid.html">Grid System</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                        <li><a href="messages.html">Messages</a></li>
+                                        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+                                        <li><a href="403.html">403 - Forbidden</a></li>
+                                        <li><a href="404.html">404 - Not Found</a></li>
+                                        <li><a href="500.html">500 - Server Error</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item has-submenu">
+                                    <a href="#" class="nav-link ">Admin</a>
+
+                                    <ul class="submenu">
+                                        <li><a href="admin-dashboard.html">Dashboard</a></li>
+                                        <li><a href="admin-listings.html">Listings</a></li>
+                                        <li><a href="admin-reviews.html">Reviews</a></li>
+                                        <li><a href="admin-users.html">Users</a></li>
+                                        <li><a href="admin-settings.html">Settings</a></li>
+                                    </ul>
+                                </li>
+                            </ul><!-- /.nav -->
+                        </div><!-- /.nav-primary-wrapper -->
+
+                        <ul class="nav nav-pills secondary">
+                            <!--
+                            <li class="nav-item">
+                                <a href="#" class="nav-link circle"><i class="md-icon">search</i></a>
+                            </li>
+                            -->
+                            <li class="nav-item"><a href="submit.html" class="nav-link circle"><i class="md-icon">add</i></a></li>
+                            <li class="nav-item user-avatar-wrapper">
+                                <a href="#" class="nav-link circle user-avatar-image" style="background-image: url('assets/img/tmp/profile-1.jpg')"></a>
+                                <span class="user-avatar-status"></span>
+
+                                <ul class="header-more-menu">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Password</a></li>
+                                    <li><a href="#">Submissions</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target=".nav-primary-wrapper">
+                            <i class="md-icon">menu</i>
+                        </button>
+                    </div><!-- /.container -->
+                </div><!-- /.header-top -->
+
+
+                <div class="header-bottom">
+                    <div class="container">
+                        <div class="header-bottom-label hidden-md-down">
+                            I'm looking for
+                        </div><!-- /.header-bottom-label -->
+
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Properties</a></li>
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Cars</a></li>
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Events</a></li>
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Food &amp; Drink</a></li>
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Travel</a></li>
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Hotel</a></li>
+                            <li class="nav-item"><a href="listings.html" class="nav-link">Restaurant</a></li>
+                        </ul><!-- /.nav -->
+
+                        <div class="header-bottom-more">
+                            <i class="md-icon">more_horiz</i>
+
+                            <ul class="header-more-menu">
+                                <li><a href="submit.html">Submit New</a></li>
+                                <li><a href="listings.html">All Listings</a></li>
+                                <li><a href="login.html">Login</a></li>
+                                <li><a href="registration.html">Register</a></li>
+                            </ul>
+                        </div><!-- /.header-bottom-more -->
+                    </div><!-- /.container -->
+                </div><!-- /.header-bottom -->
+
+            </div><!-- /.header-inner -->
+        </div><!-- /.header -->
+    </div><!-- /.header-wrapper -->
+
+    <div class="main-wrapper">
+        <div class="main">
+            <div class="main-inner">
+
+
+                <div class="content">
+                    <div class="content-title">
+                        <div class="container">
+                            <h1>Submit Dish</h1>
+
+                            <ul class="breadcrumb">
+                                <li><a href="index.html">Materialist</a> <i class="md-icon">keyboard_arrow_right</i></li>
+
+
+                                <li class="active">Submit Listing</li>
+
+                            </ul><!-- /.breadcrumb -->
+                        </div><!-- /.container -->
+                    </div><!-- /.content-title -->
+
+                    <div class="container push-top-bottom">
+                        <div class="box">
+                            <form method="post" action="?">
+                                <fieldset>
+                                    <legend>Basic Information</legend>
+
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control">
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-control" rows="6"></textarea>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <textarea class="form-control" rows="6"></textarea>
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        <label>Quantity</label>
+                                        <input type="text" class="form-control">
+                                    </div><!-- /.form-group -->
+
+                                    <div class="form-group">
+                                        <label>Price</label>
+                                        <input type="text" class="form-control">
+                                    </div><!-- /.form-group -->
+
+                                </fieldset>
+
+                                <fieldset id="fieldset">
+                                    <legend id="legend">Ingredient</legend>
+                                    <div id="placeholder">
+                                        <div id="template">
+                                            <!--<p>Ingredient<label for="enlargement"></label></p>-->
+                                            <p><input type="text" class="form-control"></p>
+                                        </div> <!-- template -->
+                                    </div> <!-- placeholder -->
+                                    <p><button type="button" name="Submit" onclick="Add();">Add new ingredient</button></p>
+
+                                </fieldset>
+                                <fieldset>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class='col-sm-6'>
+                                                <input type='text' class="form-control" id='datetimepicker4' />
+                                            </div>
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $('#datetimepicker4').datetimepicker();
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <!--<fieldset>-->
+                                    <!--<legend>Payment Information</legend>-->
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Package</label>-->
+
+                                                <!--<select class="form-control">-->
+                                                    <!--<option value="">Bronze + $10</option>-->
+                                                <!--</select>-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Payment Method</label>-->
+
+                                                <!--<select class="form-control">-->
+                                                    <!--<option value="">Paypal</option>-->
+                                                <!--</select>-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Duration</label>-->
+
+                                                <!--<select class="form-control">-->
+                                                    <!--<option value="">1 Year (Save 10%)</option>-->
+                                                <!--</select>-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+                                    <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+                                <!--</fieldset>-->
+
+                                <!--<fieldset>-->
+                                    <!--<legend>Location</legend>-->
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Country</label>-->
+                                                <!--<select class="form-control"></select>-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Location</label>-->
+                                                <!--<select class="form-control"></select>-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Sublocation</label>-->
+                                                <!--<select class="form-control"></select>-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+                                    <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+                                <!--</fieldset>-->
+
+                                <fieldset>
+                                    <legend>Contact Information</legend>
+
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Country</label>
+                                                <input type="text" class="form-control">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-* -->
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" class="form-control">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-* -->
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <input type="text" class="form-control">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-* -->
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-* -->
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>E-mail</label>
+                                                <input type="text" class="form-control">
+                                            </div><!-- /.form-group -->
+                                        </div><!-- /.col-* -->
+
+                                        <!--<div class="col-sm-4">-->
+                                            <!--<div class="form-group">-->
+                                                <!--<label>Website</label>-->
+                                                <!--<input type="text" class="form-control">-->
+                                            <!--</div>&lt;!&ndash; /.form-group &ndash;&gt;-->
+                                        <!--</div>&lt;!&ndash; /.col-* &ndash;&gt;-->
+                                    </div>
+                                </fieldset>
+
+
+
+                                <fieldset>
+                                    <legend>Additional Information</legend>
+
+                                    <!--<div class="checkbox">-->
+                                        <!--<label><input type="checkbox"> Send me newsletter</label>-->
+                                    <!--</div>-->
+
+                                    <div class="checkbox">
+                                        <label><input type="checkbox"> I agree with terms &amp; conditions</label>
+                                    </div>
+                                </fieldset>
+
+                                <div class="center">
+                                    <a href="#" class="btn btn-primary btn-large">Submit Dish</a>
+                                </div><!-- /.center -->
+                            </form>
+                        </div><!-- /.box -->
+                    </div><!-- /.container -->
+                </div><!-- /.content -->
+            </div><!-- /.main-inner -->
+        </div><!-- /.main -->
+    </div><!-- /.main-wrapper -->
+
+    <div class="footer-wrapper">
+        <div class="footer">
+            <div class="footer-widgets">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-3">
+                            <div class="widget right-border">
+                                <h2 class="widgettitle"><img src="assets/img/logo-light.png" alt="Materialist"></h2>
+
+                                <p>
+                                    Mauris dictum, sem non pretium ultricies, dolor mi aliquet dolor, non facilisis arcu ligula vitae elit. Pellentesque ac varius sem. Sed pellentesque nisl vitae pellentesque consectetur.
+                                </p>
+                            </div><!-- /.widget -->
+                        </div><!-- /.col-* -->
+
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-1">
+                            <div class="widget right-border">
+                                <h2 class="widgettitle">Social</h2>
+
+                                <ul class="nav nav-stacked">
+                                    <li class="nav-item"><a href="#" class="nav-link">Facebook</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Twitter</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">LinkedIn</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Google Plus</a></li>
+                                </ul>
+                            </div><!-- /.widget -->
+                        </div>
+
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-1">
+                            <div class="widget right-border">
+                                <h2 class="widgettitle">Pages</h2>
+
+                                <ul class="nav nav-stacked">
+                                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Submit Listing</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Filters</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Invoice</a></li>
+                                </ul>
+                            </div><!-- /.widget -->
+                        </div><!-- /.col-* -->
+
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-md-offset-1">
+                            <div class="widget">
+                                <h2 class="widgettitle">Admin</h2>
+
+                                <ul class="nav nav-stacked">
+                                    <li class="nav-item"><a href="#" class="nav-link">Dashboard</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Reviews</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Users</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Listings</a></li>
+                                </ul>
+                            </div><!-- /.widget -->
+                        </div><!-- /.col-* -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.footer-widgets -->
+
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-top-left">
+                        <strong class="hidden-xs-down">Supported credit cards:</strong>
+                        <i class="fa fa-cc-stripe"></i>
+                        <i class="fa fa-cc-visa"></i>
+                        <i class="fa fa-cc-discover"></i>
+                        <i class="fa fa-cc-mastercard"></i>
+                    </div><!-- /.footer-top-left -->
+
+                    <div class="footer-top-right">
+                        <a class="footer-top-action">
+                            <i class="md-icon">vertical_align_top</i>
+                        </a><!-- /.footer-top-action -->
+
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                        </ul>
+                    </div><!-- /.footer-top-right -->
+                </div><!-- /.container -->
+            </div><!-- /.footer-top -->
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-left">
+                        Materialist HTML Template - Created by <a href="#">Code Vision</a>
+                    </div><!-- /.footer-bottom-left -->
+
+                    <div class="footer-bottom-right">
+                        Copyright &copy; 2016 - All Rights Reserved
+                    </div><!-- /.footer-bottom-right -->
+                </div><!-- /.container -->
+            </div><!-- /.footer-bottom -->
+        </div><!-- /.footer -->
+    </div><!-- /.footer-wrapper -->
+</div><!-- /.page-wrapper -->
+
+<div class="customizer">
+    <div class="customizer-content">
+        <h2>Color Variant</h2>
+
+        <ul>
+            <li><a href="assets/css/materialist-red.css" class="background-red"></a></li>
+            <li><a href="assets/css/materialist-pink.css" class="background-pink"></a></li>
+            <li><a href="assets/css/materialist-purple.css" class="background-purple"></a></li>
+            <li><a href="assets/css/materialist-deep-purple.css" class="background-deep-purple"></a></li>
+            <li><a href="assets/css/materialist-indigo.css" class="background-indigo"></a></li>
+            <li><a href="assets/css/materialist-blue.css" class="background-blue"></a></li>
+            <li><a href="assets/css/materialist-light-blue.css" class="background-light-blue"></a></li>
+            <li><a href="assets/css/materialist-cyan.css" class="background-cyan"></a></li>
+            <li><a href="assets/css/materialist-teal.css" class="background-teal"></a></li>
+            <li><a href="assets/css/materialist-green.css" class="background-green"></a></li>
+            <li><a href="assets/css/materialist-light-green.css" class="background-light-green"></a></li>
+            <li><a href="assets/css/materialist-lime.css" class="background-lime"></a></li>
+            <li><a href="assets/css/materialist-yellow.css" class="background-yellow"></a></li>
+            <li><a href="assets/css/materialist-amber.css" class="background-amber"></a></li>
+            <li><a href="assets/css/materialist-orange.css" class="background-orange"></a></li>
+            <li><a href="assets/css/materialist-deep-orange.css" class="background-deep-orange"></a></li>
+            <li><a href="assets/css/materialist-brown.css" class="background-brown"></a></li>
+            <li><a href="assets/css/materialist-blue-grey.css" class="background-blue-grey"></a></li>
+        </ul>
+    </div><!-- /.customizer-content -->
+
+    <div class="customizer-title">
+        <span><i class="fa fa-cog"></i> Customizer</span>
+    </div><!-- /.customizer-title -->
+</div><!-- /.customizer -->
+
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+<script type="text/javascript" src="assets/js/tether.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/leaflet.js"></script>
+<script type="text/javascript" src="assets/js/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="assets/libraries/owl-carousel/owl.carousel.min.js"></script>
+<script type="text/javascript" src="assets/js/materialist.js"></script>
+<script type="text/javascript" src="ingredient.js"></script>
+</body>
+</html>

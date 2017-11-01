@@ -1,16 +1,13 @@
 $(document).ready(function() {
-    $('.popup-btn').click(function(e) {
-        $('.popup-wrap').fadeIn(250);
-        $('.popup-box').removeClass('transform-out').addClass('transform-in');
-
+    $('.openBtn').click(function(e) {
+        setTimeout(function() {$('.popup').removeClass('animationClose').addClass('animationOpen');}, 100);
+        $('.obscure').fadeIn(50);
         e.preventDefault();
     });
 
-    $('.popup-close').click(function(e) {
-        $('.popup-wrap').fadeOut(500);
-        $('.popup-box').removeClass('transform-in').addClass('transform-out');
-
+    $('.closeBtn').click(function(e) {
         e.preventDefault();
+        setTimeout(function() {$('.obscure').fadeOut(350);}, 50);
+        $('.popup').removeClass('animationOpen').addClass('animationClose');
     });
 });
-
